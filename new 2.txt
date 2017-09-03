@@ -1,0 +1,32 @@
+REPORT MIAS - NONLINEAR IDENTIFICATION
+PROCESS
+	Description , data separation ---- validation , identification, simulation
+FROE
+Classical algorithm:
+	- Slow varying process - always theta*y(t)
+	- explained variance really high only with the first chosen regressor --- GOOD id, val, BAD simulation
+	- Look at slides of the lecture , do some consideration
+Analysis description:
+	- Instead of chosing a threshold for the explained variance(because it was really high only with the first regressor)
+	Run the analisys with different initial model assumption and different polynomial degrees. for each of them 
+		- Pickup one regressor at a time and ananlyze the plots of the MSE on sim and validation
+		- Sim and validation were always good, simulation was good only in some cases
+		- Good simulation ----> Good identification adn validation
+		- The higher the number of regressor, the lower the simulation error, probably because the process is non linear and the addition of 
+		  nonlinear regressor was able to describe provide better result in simulation. 
+		- At a certain point, especially with high degree of the polynomial expansion, the simulated process diverged 
+NN
+For the definition of the Neural Network, sklearn.MLPRegressor(Multi-layer Perceptron regressor) library has been used.
+This model optimizes the squared-loss using LBFGS, an optimization algorithm in the family of quasi-Newton methods.
+What we noticed is that starting from different initial state, the network produce different result:
+	- Some initialization lead the minimization algorithm to be stucked in a Local Minima, producing bad results.
+	- Other initialization lead to good result both  in validation and identification:
+			-	Depending on the complexity and on the input of the network, some of them are able to produce
+				really good result in terms of simulation	
+
+
+
+NN vs FROE
+	- Both enphasize the ability of the first regressor to produce accurated result in terms of prediction  -- but bad in simulation
+	- The analisys done froe an a polynomial NARX suggest that the polynomial one is not the RIGHT nonlinearity of the system. 
+	  In fact, result produced in term of simulation by the NN are in general more accurate.
