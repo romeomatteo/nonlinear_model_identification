@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Froe</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<title>Froe</title><script src="./js/require.min.js"></script>
+<script src="./js/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -8451,15 +8451,15 @@ label {
 }
 /* Flexible box model classes */
 /* Taken from Alex Russell http://infrequently.org/2009/08/css-3-progress/ */
-/* This file is a compatability layer.  It allows the usage of flexible box 
+/* This file is a compatability layer.  It allows the usage of flexible box
 model layouts accross multiple browsers, including older browsers.  The newest,
 universal implementation of the flexible box model is used when available (see
-`Modern browsers` comments below).  Browsers that are known to implement this 
+`Modern browsers` comments below).  Browsers that are known to implement this
 new spec completely include:
 
     Firefox 28.0+
     Chrome 29.0+
-    Internet Explorer 11+ 
+    Internet Explorer 11+
     Opera 17.0+
 
 Browsers not listed, including Safari, are supported via the styling under the
@@ -11233,7 +11233,7 @@ div#pager .ui-resizable-handle {
   background: #f7f7f7;
   border-top: 1px solid #cfcfcf;
   border-bottom: 1px solid #cfcfcf;
-  /* This injects handle bars (a short, wide = symbol) for 
+  /* This injects handle bars (a short, wide = symbol) for
         the resize handle. */
 }
 div#pager .ui-resizable-handle::after {
@@ -11676,7 +11676,7 @@ ul.typeahead-list > li > a {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    
+
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -11732,14 +11732,14 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -11749,7 +11749,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="./js/MathJax-2.7.2/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11997,7 +11997,7 @@ The model used is: <br>
         <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;y(t)&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;y(t-</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-        
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model: y(t+1|t) = f(</span><span class="si">{}</span><span class="s2">, ... , </span><span class="si">{}</span><span class="s2">, </span><span class="si">{}</span><span class="s2">, ... ,</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">features</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">features</span><span class="p">[</span><span class="o">-</span><span class="n">AR_deg</span><span class="p">],</span> \
                                                               <span class="n">features</span><span class="p">[</span><span class="n">X_deg</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">features</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Where f() is a polynomial expansion of the </span><span class="si">{}</span><span class="s2"> degree&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">poly_degree</span><span class="p">))</span>
@@ -12036,7 +12036,7 @@ Where f() is a polynomial expansion of the 2 degree
  $W = \Phi -W(A-I)$ <br>
  $A = (W^TW)^{-1}W^T\Phi$ <br>
  $\hat{g} = (W^TW)^{-1}W^TY $ <br>
- $\vartheta = g - (A-I) \vartheta $ 
+ $\vartheta = g - (A-I) \vartheta $
 </p>
 </div>
 </div>
@@ -12181,7 +12181,7 @@ explained, i.e. until $1 − \sum_{i=1}^{ns} [err]_i$ is less than a prescribed 
 <li>
 <ol>
 <li>
-$\hat{\vartheta}_n = \hat{g}_n$; 
+$\hat{\vartheta}_n = \hat{g}_n$;
 </li>
 <li>
 $\hat{\vartheta}_i = \hat{g}_i - \sum_{k=i+1}^{n} a_{ik}\hat{\vartheta}_k, i = n-1, ..., 1$
@@ -12202,86 +12202,86 @@ $\hat{\vartheta}_i = \hat{g}_i - \sum_{k=i+1}^{n} a_{ik}\hat{\vartheta}_k, i = n
     <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
     <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        
+
         <span class="c1"># 1.A</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PHI</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-            
+
             <span class="c1"># 1.B</span>
             <span class="n">W</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">PHI</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
-            
+
             <span class="c1"># 1.C</span>
             <span class="n">g_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">Y</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]),</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">g_i</span><span class="p">)</span>
-            
+
             <span class="c1"># 1.D</span>
             <span class="n">err_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">g_i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span>  <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]),</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">err_i</span><span class="p">)</span>
-        
+
         <span class="c1"># 1.E</span>
         <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">regressor_terms</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-        
+
         <span class="c1"># 1.F</span>
         <span class="n">W</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">PHI</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span>
-        
+
         <span class="c1"># 1.G</span>
         <span class="n">g_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g_hat</span><span class="p">,</span> <span class="n">g</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="n">regressor_selected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">regressor_selected</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
-        
+
         <span class="c1"># 1.H</span>
         <span class="n">err_sum</span> <span class="o">+=</span> <span class="n">err</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-        
+
         <span class="c1"># 3</span>
         <span class="k">if</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">err_sum</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">err_sum</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Threshold exceeded!&#39;</span><span class="p">)</span>
             <span class="k">break</span><span class="p">;</span>
     <span class="k">else</span><span class="p">:</span>
-        
+
         <span class="c1"># 2.A</span>
         <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PHI</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
             <span class="k">if</span> <span class="n">l</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">regressor_selected</span><span class="p">:</span>
                 <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">PHI</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-                
+
                 <span class="c1"># 2.C</span>
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
                     <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">PHI</span><span class="p">[:,</span><span class="n">l</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">i</span><span class="p">]),</span><span class="mi">2</span><span class="p">)</span>
                     <span class="n">temp</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">W</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
-                    
+
                 <span class="c1"># 2.B</span>
                 <span class="n">W</span><span class="p">[:,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">PHI</span><span class="p">[:,</span><span class="n">l</span><span class="p">]</span> <span class="o">-</span> <span class="n">temp</span>
-                
+
                 <span class="c1"># 2.D</span>
                 <span class="n">g_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">k</span><span class="p">],</span><span class="n">Y</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">k</span><span class="p">]),</span><span class="mi">2</span><span class="p">)</span>
                 <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">g_i</span><span class="p">)</span>
-                
+
                 <span class="c1"># 2.E</span>
                 <span class="n">err_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">g_i</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span>  <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">k</span><span class="p">]),</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
                 <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">err_i</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
                 <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-                
+
         <span class="c1"># 2.F</span>
         <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">PHI</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        
+
         <span class="c1"># 2.G</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
             <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">PHI</span><span class="p">[:,</span><span class="n">j</span><span class="p">]))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">W</span><span class="p">[:,</span><span class="n">i</span><span class="p">]),</span><span class="mi">2</span><span class="p">)</span>
             <span class="n">temp</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">W</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">regressor_terms</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="n">W</span><span class="p">[:,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">PHI</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">temp</span>
-        
+
         <span class="c1"># 2.H</span>
         <span class="n">g_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g_hat</span><span class="p">,</span> <span class="n">g</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
         <span class="n">regressor_selected</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">regressor_selected</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
-        
+
         <span class="c1"># 2.I</span>
         <span class="n">err_sum</span> <span class="o">+=</span> <span class="n">err</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-        
+
         <span class="c1"># 3</span>
         <span class="k">if</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">err_sum</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Threshold exceeded!&#39;</span><span class="p">)</span>
@@ -12290,11 +12290,11 @@ $\hat{\vartheta}_i = \hat{g}_i - \sum_{k=i+1}^{n} a_{ik}\hat{\vartheta}_k, i = n
 
 <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">g_hat</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">g_hat</span><span class="p">))):</span>
-    
+
     <span class="c1"># 4.A</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">g_hat</span><span class="p">):</span>
         <span class="n">theta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">g_hat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        
+
     <span class="c1"># 4.B</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
@@ -15107,7 +15107,7 @@ i2OAiIiIiIiIiIioxTFARERERERERETU4v4/0tFcq4SLn44AAAAASUVORK5CYII=
 <span class="n">reg_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">X_deg</span><span class="p">,</span><span class="n">avg_u_val</span><span class="p">)</span>
 <span class="n">reg_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">AR_deg</span><span class="p">,</span><span class="n">avg_y_val</span><span class="p">)</span>
 <span class="n">PHI_val</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">VAL_LENGHT</span><span class="p">):</span>  
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">VAL_LENGHT</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
         <span class="n">reg_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reg_y</span><span class="p">,</span> <span class="n">Y_val</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">1</span><span class="p">:]</span>
         <span class="n">reg_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reg_u</span><span class="p">,</span> <span class="n">u_val</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">1</span><span class="p">:]</span>
@@ -18854,7 +18854,7 @@ J35PhZ8dYwAAAABJRU5ErkJggg==
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#only consider the regressor selected by the identification process</span>
-<span class="n">model_reg</span> <span class="o">=</span> <span class="n">reg</span><span class="p">[</span><span class="n">regressor_selected</span><span class="p">]</span>  
+<span class="n">model_reg</span> <span class="o">=</span> <span class="n">reg</span><span class="p">[</span><span class="n">regressor_selected</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -20723,7 +20723,7 @@ SJIkSZIkSQP/AonQjD1b8JlgAAAAAElFTkSuQmCC
   </div>
 </body>
 
- 
+
 
 
 </html>
